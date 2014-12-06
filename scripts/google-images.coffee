@@ -30,6 +30,10 @@ module.exports = (robot) ->
   robot.respond /wat/i, (msg) ->
     imageMe msg, "wat", false, (url) ->
       msg.send url
+  
+  robot.respond /grumpy cat/i, (msg) ->
+    imageMe msg, "grumpy cat", false, (url) ->
+      msg.send url
 
 imageMe = (msg, query, animated, faces, cb) ->
   cb = animated if typeof animated == 'function'
